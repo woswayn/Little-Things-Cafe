@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Little Things Café</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+    /* Reset and Body */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-image: url('img/home bg.jpg'); /* replace with your image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header */
+    header {
+        background-color: rgba(76, 60, 50, 0.9);
+        color: white;
+        padding: 15px 20px;
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin-left: 10px;
+    }
+
+    header .logo {
+        height: 50px;
+        width: auto;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hero / About Section with Gradient Overlay */
+    .about-section {
+        width: 100%;
+        min-height: calc(100vh - 80px - 60px); /* full viewport minus header/footer */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85));
+        flex: 1;
+    }
+
+    /* Optional: overlay can be semi-transparent black for more contrast */
+    /* background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/home bg.jpg'); */
+
+    .about-section h3 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #4c3c32;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: rgba(76, 60, 50, 0.9);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        flex-shrink: 0;
+    }
+</style>
+</head>
+<body>
+<header>
+    <div style="display:flex; align-items:center;">
+        <img src="img/little-things-logo.jpg" alt="Little Things Café Logo" class="logo">
+        <h1>Little Things Café</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="about-section">
+    <h3>About Us</h3>
+    <p>
+        Little Things Café is a small and cozy café in Palawan.
+    </p>
+    <p>
+        We make Korean minimalist cakes, serve Korean meals, and offer delicious café drinks.
+    </p>
+    <p>
+        Our goal is to create simple but meaningful food moments for our customers.
+    </p>
+    <p>
+        We believe that even small things can bring joy, comfort, and sweetness to your day.
+    </p>
+    <p>
+        Visit us and enjoy the little things with us.
+    </p>
+</div>
+
+<footer>
+    <p>&copy; 2025 Little Things Café. All rights reserved.</p>
+</footer>
+</body>
+</html>

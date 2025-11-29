@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Little Things Café</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Reset and Body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4c3c32;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header .logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            background-image: url('img/home bg.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1000px;
+            border-radius: 10px;
+        }
+
+        .menu h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e6a000;
+            padding-bottom: 5px;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1 1 45%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .menu-item h3 {
+            margin-bottom: 5px;
+        }
+
+        /* ORDER BUTTON */
+        .order-btn {
+            background-color: #e6a000;
+            border: none;
+            padding: 8px 15px;
+            color: white;
+            font-size: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .order-btn:hover {
+            background-color: #c98a00;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #4c3c32;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* MODAL ORDER FORM */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/little-things-logo.jpg" alt="Little Things Café Logo">
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faqs.html">FAQs</a>
+    </nav>
+</header>
+
+<section class="menu">
+
+    <!-- KOREAN -->
+    <h2 id="KoreanMeals">Korean Meals</h2>
+    <div class="menu-section">
+
+        <div class="menu-item">
+            <img src="img/bibimbeef.jpg" alt="Bibimbap Beef">
+            <div>
+                <h3>Bibimbeef - Php 119</h3>
+                <button class="order-btn" onclick="openOrderForm('Bibimbeef - Php 119')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/kimchi fried rice.jpg" alt="Kimchi Fried Rice">
+            <div>
+                <h3>Kimchi Fried Rice - Php 109</h3>
+                <button class="order-btn" onclick="openOrderForm('Kimchi Fried Rice - Php 109')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/bakedmac.jpg" alt="Bakedmac">
+            <div>
+                <h3>Bakedmac - Php 119</h3>
+                <button class="order-btn" onclick="openOrderForm('Bakedmac - Php 119')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/tteokkbokki.jpg" alt="Tteokbokki">
+            <div>
+                <h3>Tteokbokki - Php 115</h3>
+                <button class="order-btn" onclick="openOrderForm('Tteokbokki - Php 115')">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASTRIES -->
+    <h2 id="pastries">Pastries</h2>
+    <div class="menu-section">
+
+        <div class="menu-item">
+            <img src="img/bblueberry.jpg" alt="Blueberry Cheesecake">
+            <div>
+                <h3>Blueberry Cheesecake - Php 125</h3>
+                <button class="order-btn" onclick="openOrderForm('Blueberry Cheesecake - Php 125')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/bento.jpg" alt="Bento Cake">
+            <div>
+                <h3>Bento Cake - Php 300</h3>
+                <button class="order-btn" onclick="openOrderForm('Bento Cake - Php 300')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/minimalist cake.jpg" alt="Minimalist Cake">
+            <div>
+                <h3>Minimalist Cake - Php 800</h3>
+                <button class="order-btn" onclick="openOrderForm('Minimalist Cake - Php 800')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/winter woodland.jpg" alt="Winter Woodland Cake">
+            <div>
+                <h3>Winter Woodland Cake - Php 950</h3>
+                <button class="order-btn" onclick="openOrderForm('Winter Woodland Cake - Php 950')">Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DRINKS -->
+    <h2 id="drinks">Drinks</h2>
+    <div class="menu-section">
+
+        <div class="menu-item">
+            <img src="img/fruit-majestee.png" alt="Fruit Majestee">
+            <div>
+                <h3>Fruit Majestee - Php 125</h3>
+                <button class="order-btn" onclick="openOrderForm('Fruit Majestee - Php 125')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/Creamy Lotus.png" alt="Creamy Lotus">
+            <div>
+                <h3>Creamy Lotus - Php 150</h3>
+                <button class="order-btn" onclick="openOrderForm('Creamy Lotus - Php 150')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/cutesy.png" alt="Cutesy Drink">
+            <div>
+                <h3>Cutesy - Php 115</h3>
+                <button class="order-btn" onclick="openOrderForm('Cutesy - Php 115')">Order</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/milolava.png" alt="Milo Crunch">
+            <div>
+                <h3>Milo Crunch - Php 110</h3>
+                <button class="order-btn" onclick="openOrderForm('Milo Crunch - Php 110')">Order</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Little Things Café. All rights reserved.</p>
+</footer>
+
+<!-- ORDER FORM MODAL -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeOrderForm()">&times;</span>
+        <h2>Order Form</h2>
+
+        <form id="orderForm">
+            <label>Item</label>
+            <input type="text" id="orderItem" readonly>
+
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Quantity</label>
+            <input type="number" min="1" value="1" required>
+
+            <label>Notes</label>
+            <textarea placeholder="Add notes (optional)"></textarea>
+
+            <button type="submit" class="order-btn" style="width:100%;">Submit Order</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openOrderForm(itemName) {
+    document.getElementById("orderModal").style.display = "block";
+    document.getElementById("orderItem").value = itemName;
+}
+
+function closeOrderForm() {
+    document.getElementById("orderModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("orderModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+document.getElementById("orderForm").onsubmit = function(e) {
+    e.preventDefault();
+    alert("Order submitted! We'll contact you soon.");
+    closeOrderForm();
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Things Café</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* --- Reset / Base --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-image: url('img/home bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: rgba(76, 60, 50, 0.8); /* semi-transparent overlay */
+            padding: 8px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Hero Section --- */
+        .hero-image {
+            background-image: url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative; /* needed for overlay */
+        }
+
+        .hero-text {
+            color: white;
+            position: relative; /* text above overlay */
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Overlay behind hero text only */
+        .hero-text-overlay {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5); /* semi-transparent black */
+            border-radius: 10px;
+            z-index: -1; /* behind the text */
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background-image: url('img/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.0);
+            z-index: 0;
+        }
+
+        .featured-section .row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .column {
+            width: 30%;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.0);
+            opacity: 0;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(76, 60, 50, 0.8); /* semi-transparent overlay */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Button style (for featured section) */
+        .btn {
+            background-color: #e6a000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #d18e00;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="img/little-things-logo.jpg" alt="Little Things Café Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-image">
+    <div class="hero-text">
+        <div class="hero-text-overlay"></div>
+
+        <h1>Welcome to Little Things Café!</h1>
+        <p>We serve Korean minimalist trendy cakes, Korean meals, and café drinks that make your day simple and sweet.</p>
+        <p>Our café is a cozy place where you can relax, enjoy good food, and feel calm.</p>
+        <p>Come visit us and enjoy the little things with us.</p>
+    </div>
+</section>
+
+<!-- Featured Sections -->
+<div class="featured-section">
+    <div class="row">
+        <div class="column">
+            <div class="container">
+                <img src="img/bblueberry.jpg" alt="Pastries" class="image">
+                <div class="overlay">
+                    <div class="text">Cakes<br><a href="menu.html#cakes" class="btn">See Menu</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <img src="img/bakedmac.jpg" alt="Korean Meals" class="image">
+                <div class="overlay">
+                    <div class="text">Meals<br><a href="menu.html#meals" class="btn">See Menu</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                <img src="img/Creamy Lotus.png" alt="Café Drinks" class="image">
+                <div class="overlay">
+                    <div class="text">Drinks<br><a href="menu.html#drinks" class="btn">See Menu</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Little Things Café. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

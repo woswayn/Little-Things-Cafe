@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs - Little Things Café</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('img/home bg.jpg'); /* Replace with your background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(76, 60, 50, 0.95);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e6a000;
+}
+
+/* FAQs Section */
+.faqs {
+    max-width: 800px;
+    margin: 80px auto 40px; /* added top margin for sticky header */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.faqs h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #4c3c32;
+}
+
+.faq h3 {
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #4c3c32;
+    transition: color 0.3s;
+}
+
+.faq h3:hover {
+    color: #e6a000;
+}
+
+.faq p {
+    display: none;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.faq.active p {
+    display: block;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(76, 60, 50, 0.95);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* push footer to bottom if content is short */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    .faq h3 {
+        font-size: 18px;
+    }
+
+    .faqs h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="img/little-things-logo.jpg" alt="Little Things Café Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="faqs">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <h3>1. What are your store hours?</h3>
+        <p>We are open from 3:00 PM to 8:00 PM (Monday–Tuesday, Thursday–Saturday).</p>
+    </div>
+
+    <div class="faq">
+        <h3>2. Where are you located?</h3>
+        <p>Pardeco Road, Rizal Extension Avenue, PPC, Palawan.</p>
+    </div>
+
+    <div class="faq">
+        <h3>3. Do you accept advance cake orders?</h3>
+        <p>Yes, we accept advance orders via email or phone.</p>
+    </div>
+
+    <div class="faq">
+        <h3>4. Do you offer dine-in?</h3>
+        <p>Yes, we offer both dine-in and take-out.</p>
+    </div>
+
+    <div class="faq">
+        <h3>5. How can I contact you?</h3>
+        <p>Email: littlethingscafepalawan@gmail.com or call 0968 854 5619.</p>
+    </div>
+
+    <div class="faq">
+        <h3>6. Do you have Wi-Fi available for customers?</h3>
+        <p>Yes, free high-speed Wi-Fi is available inside the café.</p>
+    </div>
+
+    <div class="faq">
+        <h3>7. Can I study or work inside the coffee shop?</h3>
+        <p>Absolutely, you can study or work inside.</p>
+    </div>
+
+    <div class="faq">
+        <h3>8. Do you accept cashless payments?</h3>
+        <p>Yes, we accept GCash.</p>
+    </div>
+
+    <div class="faq">
+        <h3>9. Do you have delivery available?</h3>
+        <p>Yes, we deliver via Go Delivery Services.</p>
+    </div>
+
+    <div class="faq">
+        <h3>10. Are pets allowed inside the café?</h3>
+        <p>Pets are welcome in our outdoor seating area as long as they are leashed and well-behaved.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Little Things Café. All rights reserved.</p>
+</footer>
+
+<script>
+const faqs = document.querySelectorAll('.faq');
+faqs.forEach(faq => {
+    faq.querySelector('h3').addEventListener('click', () => {
+        faq.classList.toggle('active');
+    });
+});
+</script>
+
+</body>
+</html>
