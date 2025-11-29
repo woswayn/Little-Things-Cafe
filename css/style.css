@@ -1,0 +1,257 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../img/little-things-logo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(76, 60, 50, 0.9); /* Semi-transparent dark brown */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* Logo styling */
+.logo img {
+    max-width: 30px;  /* Adjust width as needed */
+    height: auto;      /* Keeps the aspect ratio */
+    display: block;
+    margin: 0 auto;    /* Centers the logo */
+}
+
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #e6a000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-image {
+    background: url('../img/home bg.jpg') center center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(51, 35, 35);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero-text .btn {
+    background-color: #e6a000;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero-text .btn:hover {
+    background-color: #d18e00;
+}
+
+/* About Section */
+.about-snippet, .featured-section, .faqs, .order-form, .contact-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+.about-section {
+    display: inline-block; /* box wraps tightly around content */
+    margin: 60px auto;    /* center horizontally and give top/bottom spacing */
+    padding: 20px;        /* spacing inside the box */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 90%;       /* prevents box from going too wide on large screens */
+}
+
+
+
+/* Featured Section */
+.featured-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.featured-section .column {
+    width: 300px;
+    position: relative;
+}
+
+.featured-section .container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.featured-section .image {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.featured-section .container:hover .image {
+    transform: scale(1.1);
+}
+
+.featured-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.featured-section .container:hover .overlay {
+    opacity: 1;
+}
+
+.featured-section .overlay .text {
+    font-size: 20px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #e6a000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #d18e00;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(76, 60, 50, 0.9);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Order Form */
+.order-form form input, .order-form form select, .order-form form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.order-form form button {
+    background-color: #4c3c32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.order-form form button:hover {
+    background-color: #6d4b3b;
+}
+
+/* FAQs */
+.faqs h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq {
+    margin-bottom: 20px;
+}
+
+.faq h3 {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+.faq h3::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+}
+
+.faq p {
+    display: none;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.faq.active p {
+    display: block;
+}
+
+.faq.active h3::after {
+    content: "-";
+}
