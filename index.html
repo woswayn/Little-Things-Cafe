@@ -6,7 +6,7 @@
     <title>Little Things Café</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* --- Reset / Base --- */
+    
         * {
             box-sizing: border-box;
             margin: 0;
@@ -25,9 +25,9 @@
             flex-direction: column;
         }
 
-        /* --- Header --- */
+       
         header {
-            background-color: rgba(76, 60, 50, 0.8); /* semi-transparent overlay */
+            background-color: rgba(76, 60, 50, 0.8); 
             padding: 8px 20px;
             position: relative;
             z-index: 2;
@@ -60,7 +60,7 @@
             text-decoration: underline;
         }
 
-        /* --- Hero Section --- */
+       
         .hero-image {
             background-image: url('img/hero.jpg');
             background-size: cover;
@@ -70,27 +70,27 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative; /* needed for overlay */
+            position: relative; 
         }
 
         .hero-text {
             color: white;
-            position: relative; /* text above overlay */
+            position: relative; 
             z-index: 1;
             padding: 20px;
             text-align: center;
         }
 
-        /* Overlay behind hero text only */
+       
         .hero-text-overlay {
             position: absolute;
             top: 0; left: 50%;
             transform: translateX(-50%);
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5); /* semi-transparent black */
+            background: rgba(0,0,0,0.5); 
             border-radius: 10px;
-            z-index: -1; /* behind the text */
+            z-index: -1; 
         }
 
         .hero-text h1 {
@@ -101,7 +101,7 @@
             font-size: 20px;
         }
 
-        /* Featured Section */
+  
         .featured-section {
             background-image: url('img/bg.jpg');
             background-size: cover;
@@ -168,9 +168,9 @@
             text-align: center;
         }
 
-        /* Footer */
+
         footer {
-            background-color: rgba(76, 60, 50, 0.8); /* semi-transparent overlay */
+            background-color: rgba(76, 60, 50, 0.8); 
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -179,7 +179,7 @@
             z-index: 2;
         }
 
-        /* Button style (for featured section) */
+   
         .btn {
             background-color: #e6a000;
             color: white;
@@ -213,7 +213,7 @@
     </nav>
 </header>
 
-<!-- Hero Section -->
+
 <section class="hero-image">
     <div class="hero-text">
         <div class="hero-text-overlay"></div>
@@ -225,7 +225,7 @@
     </div>
 </section>
 
-<!-- Featured Sections -->
+
 <div class="featured-section">
     <div class="row">
         <div class="column">
@@ -261,3 +261,4 @@
 
 </body>
 </html>
+
